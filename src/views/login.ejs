@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="link"
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="shape"></div>
+    <toggle id="toggle" onclick="myFunction()">
+      <span id="toggle-btn">
+        <i id="change-icon1" class="fas fa-cloud-moon"></i>
+        <i id="change-icon2" class="fas fa-cloud-sun"></i>
+      </span>
+    </toggle>
+
+    <form action="/login" method="POST" id="login_form" class="login-div">
+      <div class="logo">
+        <img src="OIP.jpg" alt="" />
+      </div>
+      <div class="title">TODO</div>
+      <div class="sub-title">...</div>
+      <div class="fields">
+        <div class="username">
+          <i class="fas fa-user"></i>
+          <input
+            name="username"
+            type="username"
+            class="user-input"
+            placeholder="username"
+            autocomplete="off"
+          />
+        </div>
+        <div class="password">
+          <i class="fas fa-lock"></i>
+
+          <input
+            name="password"
+            type="password"
+            class="pass-input"
+            placeholder="password"
+          />
+        </div>
+        <button type="submit" class="signin-button">login</button>
+      </div>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/js/login.js"></script>
+  </body>
+</html>

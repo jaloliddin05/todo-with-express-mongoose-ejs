@@ -1,9 +1,12 @@
 import * as dotenv from "dotenv";
 import * as express from "express";
 import * as cookieParser from "cookie-parser";
+import { mongo } from "./utils/db";
 import router from "./routs";
 dotenv.config();
-
+mongo()
+  .then(() => console.log("Db connected successfully"))
+  .catch((err) => console.log(err));
 const app: express.Application = express();
 
 app.set("view engine", "ejs");
