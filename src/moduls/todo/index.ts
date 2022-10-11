@@ -6,29 +6,46 @@ import { TodoModel } from "./model";
 export const GET = async (req: Request, res: Response) => {
   const { id } = req.params;
   const user = await UserModel.findOne({ _id: id });
-  const findTodos = await TodoModel.find({ userId: id });
-  res.render("todo", { findTodos, user });
+  const Todos = await TodoModel.find({ userId: id });
+  res.render("todo", { Todos, user });
+};
+export const GET_TODOS = async (req: Request, res: Response) => {
+  const { userId } = req.body;
+  let todos = await TodoModel.find({ userId });
+
+  res.send(todos);
 };
 
 export const POST = async (req: Request, res: Response) => {
   const { title, userId } = req.body;
   const time = moment().format("h:mm a");
-  const newTodo = await TodoModel.create({ title, userId, time });
-  res.send({ message: "created" });
+  await TodoModel.create({
+    title,
+    isCompleted: false,
+    userId,
+    time,
+  });
+
+  let todos = await TodoModel.find({ userId });
+
+  res.send(todos);
 };
 
 export const PUT = async (req: Request, res: Response) => {
-  const { title, isComplated, id } = req.body;
-  if (title && !isComplated) {
+  const { title, isComplated, id, userId } = req.body;
+
+  if (title) {
     await TodoModel.findByIdAndUpdate(id, { title });
-  } else if (isComplated && !title) {
-    await TodoModel.findByIdAndUpdate(id, { isComplated });
+  } else if (!title) {
+    await TodoModel.findByIdAndUpdate(id, { isCompleted: isComplated });
   }
-  res.send({ message: "updated" });
+  let todos = await TodoModel.find({ userId });
+  res.send(todos);
 };
 
 export const DELETE = async (req: Request, res: Response) => {
-  const { id } = req.body;
+  const { id, userId } = req.body;
   await TodoModel.deleteOne({ _id: id });
-  res.send({ message: "deleted" });
+  let todos = await TodoModel.find({ userId });
+  res.send(todos);
 };

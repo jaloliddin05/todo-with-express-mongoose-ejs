@@ -35,7 +35,7 @@
       </span>
     </toggle>
 
-    <form action="/login" method="POST" id="login_form" class="login-div">
+    <form id="login_form" class="login-div">
       <div class="logo">
         <img src="OIP.jpg" alt="" />
       </div>
@@ -50,6 +50,7 @@
             class="user-input"
             placeholder="username"
             autocomplete="off"
+            required
           />
         </div>
         <div class="password">
@@ -60,9 +61,12 @@
             type="password"
             class="pass-input"
             placeholder="password"
+            required
           />
         </div>
         <button type="submit" class="signin-button">login</button>
+        <p class="or_desc">or</p>
+        <a href="/register" class="signin-button">Register</a>
       </div>
     </form>
 

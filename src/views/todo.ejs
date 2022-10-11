@@ -9,7 +9,9 @@
   </head>
   <body class="p-5 bg-light">
     <div class="container">
-      <h1 class="heading">To Do</h1>
+      <h2 data-user-id="<%= user._id %> " class="heading">
+        Welcome <%= user.firstname + " " + user.lastname %>
+      </h2>
       <form class="input-box">
         <div class="shadow"></div>
         <input
@@ -23,23 +25,11 @@
     </div>
     <div class="container container-list">
       <div class="todo-box">
-        <ul class="todo-notdone-list">
-          <li>
-            <h3 class="todo-list-heading">Uncompleted works</h3>
-          </li>
-        </ul>
+        <ul class="todo-notdone-list"></ul>
         <div class="planned_todo">
-          <ul class="todo-plane-list">
-            <li>
-              <h3 class="todo-list-heading">Planed works</h3>
-            </li>
-          </ul>
+          <ul class="todo-plane-list"></ul>
         </div>
-        <ul class="todo-done-list">
-          <li>
-            <h3 class="todo-list-heading">Completed works</h3>
-          </li>
-        </ul>
+        <ul class="todo-done-list"></ul>
       </div>
     </div>
 

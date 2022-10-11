@@ -1,3 +1,9 @@
+const form = document.querySelector(".register-div");
+const firstname = document.querySelector(".firstnameInput");
+const lastname = document.querySelector(".lastnameInput");
+const username = document.querySelector(".usernameInput");
+const password = document.querySelector(".passwordInput");
+
 function myFunction() {
   let x, y, z, m, t, h;
   m = document.querySelector("body");
@@ -20,12 +26,43 @@ function myFunction() {
   z.toggleAttribute("class", "fas fa-cloud-sun");
 }
 
-const userInput = document.querySelector(".user-input");
-const passInput = document.querySelector(".pass-input");
-
-userInput.addEventListener("click", () => {
-  userInput.value = "";
+firstname.addEventListener("click", () => {
+  firstname.value = "";
 });
-passInput.addEventListener("click", () => {
-  passInput.value = "";
+lastname.addEventListener("click", () => {
+  lastname.value = "";
+});
+username.addEventListener("click", () => {
+  username.value = "";
+});
+password.addEventListener("click", () => {
+  password.value = "";
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log(firstname.value.trim());
+  console.log(lastname.value.trim());
+  console.log(username.value.trim());
+  console.log(password.value.trim());
+  fetch("http://localhost:2222/register", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      firstname: firstname.value.trim(),
+      lastname: lastname.value.trim(),
+      username: username.value.trim(),
+      password: password.value.trim(),
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.message == "username already exist") {
+        alert("username already exist");
+      } else {
+        window.location.replace(data.message);
+      }
+    });
 });

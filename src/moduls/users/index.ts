@@ -15,13 +15,14 @@ export const Post_Register = async (req: Request, res: Response) => {
     lastname,
     firstname,
   });
-  res.redirect(`/todo/${user._id}`);
+  return res.send({ message: `/todo/${user._id}` });
 };
 export const Post_Login = async (req: Request, res: Response) => {
   const { username, password } = req.body;
   const user = await UserModel.findOne({ username, password });
   if (!user) {
-    return res.render("login");
+    return res.send({ message: "user not found" });
+  } else {
+    return res.send({ message: `/todo/${user._id}` });
   }
-  res.redirect(`/todo/${user._id}`);
 };

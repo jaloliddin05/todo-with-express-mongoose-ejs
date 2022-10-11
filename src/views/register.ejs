@@ -35,7 +35,7 @@
       </span>
     </toggle>
 
-    <form action="/register" method="POST" id="login_form" class="register-div">
+    <form id="login_form" class="register-div">
       <div class="logo">
         <img src="OIP.jpg" alt="" />
       </div>
@@ -47,9 +47,10 @@
           <input
             name="firstname"
             type="username"
-            class="user-input"
+            class="user-input firstnameInput"
             placeholder="firstname"
             autocomplete="off"
+            required
           />
         </div>
         <div class="username">
@@ -57,9 +58,10 @@
           <input
             name="lastname"
             type="username"
-            class="user-input"
+            class="user-input lastnameInput"
             placeholder="lastname"
             autocomplete="off"
+            required
           />
         </div>
         <div class="username">
@@ -67,9 +69,10 @@
           <input
             name="username"
             type="username"
-            class="user-input"
+            class="user-input usernameInput"
             placeholder="username"
             autocomplete="off"
+            required
           />
         </div>
         <div class="password">
@@ -78,11 +81,14 @@
           <input
             name="password"
             type="password"
-            class="pass-input"
+            class="pass-input passwordInput"
             placeholder="password"
+            required
           />
         </div>
         <button type="submit" class="signin-button">Register</button>
+        <p class="or_desc">or</p>
+        <a href="/login" class="signin-button">Login</a>
       </div>
     </form>
 

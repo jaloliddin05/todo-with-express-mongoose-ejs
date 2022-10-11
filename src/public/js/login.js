@@ -1,3 +1,4 @@
+const form = document.querySelector(".login-div");
 function myFunction() {
   let x, y, z, m, t, h;
   m = document.querySelector("body");
@@ -28,4 +29,26 @@ userInput.addEventListener("click", () => {
 });
 passInput.addEventListener("click", () => {
   passInput.value = "";
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetch("http://localhost:2222/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      username: userInput.value.trim(),
+      password: passInput.value.trim(),
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.message == "user not found") {
+        alert("username or password invalid");
+      } else {
+        window.location.replace(data.message);
+      }
+    });
 });

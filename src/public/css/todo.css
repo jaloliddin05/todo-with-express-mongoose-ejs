@@ -22,7 +22,7 @@ body {
   align-items: center;
 }
 .heading {
-  background: #e1ff00; /* fallback for old browsers */
+  background: #edcb20; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
     #e1ff00,
@@ -30,13 +30,13 @@ body {
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #e1ff00,
+    #faac03,
     #32cd92
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .input-box {
@@ -141,7 +141,8 @@ body {
 
 /*............................................*/
 .container-list {
-  margin-top: 50px;
+  margin-top: 60px;
+  z-index: 5;
 }
 .todo-box {
   width: 1200px;
@@ -180,6 +181,7 @@ body {
   min-height: 300px;
   padding: 10px 20px;
   list-style: none;
+  z-index: 6;
 }
 .todo-done-list {
   border-top: 2px solid grey;
@@ -191,37 +193,7 @@ body {
   border: 10px solid grey;
   border-right: 5px solid grey;
 }
-.todo-item-add {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  height: 40px;
-  padding: 5px 10px;
-  margin-top: 5px;
-  font-size: 20px;
-  border: 3px solid yellow;
-  box-shadow: 0 0 2px 3px rgb(231, 231, 16);
-  background-color: orange;
-  color: white;
-  border-radius: 20px;
-}
-.todo-item-done {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  height: 40px;
-  padding: 5px 10px;
-  margin-top: 5px;
-  font-size: 20px;
-  border: 3px solid green;
-  box-shadow: 0 0 2px 3px rgb(55, 219, 55);
-  background-color: greenyellow;
-  color: white;
-  border-radius: 20px;
-}
+
 .todo-list-heading {
   text-align: center;
   font-size: 25px;
@@ -239,4 +211,54 @@ body {
   background-color: transparent;
   background: url("../images/file_download_done_black_24dp.svg");
   background-size: contain;
+}
+
+.todo_all_item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background: rgb(238, 241, 102);
+  border-radius: 10px;
+  z-index: 7;
+}
+.todo_check_btn {
+  display: inline-block;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 8;
+}
+.todo_check_btn_checked {
+  display: inline-block;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background: url("../images/checkmark-outline.svg");
+  background-position: center;
+  background-size: 20px 20px;
+  background-color: #fff;
+  z-index: 8;
+}
+.todo_item_title {
+  margin-left: 20px;
+  z-index: 8;
+}
+.todo_edit_btn,
+.todo_delete_btn {
+  display: inline-block;
+  border: 3px solid red;
+  border-radius: 50%;
+  padding: 12px;
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 8;
+}
+.todo_edit_btn {
+  margin-left: auto;
+  background: url("../images/pencil-outline.svg");
+}
+.todo_delete_btn {
+  margin-left: 10px;
+  background: url("../images/trash-outline.svg");
 }

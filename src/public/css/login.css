@@ -29,7 +29,7 @@ body {
   z-index: 10;
   width: 430px;
   height: 600px;
-  padding: 60px 35px 35px 35px;
+  padding: 35px;
   border-radius: 40px;
   border: 1px solid white;
   background-color: #ecf0f3;
@@ -39,7 +39,7 @@ body {
   z-index: 10;
   width: 430px;
   height: 700px;
-  padding: 30px 35px;
+  padding: 25px 35px;
   border-radius: 40px;
   border: 1px solid white;
   background-color: #ecf0f3;
@@ -69,7 +69,7 @@ body {
 }
 .fields {
   width: 100%;
-  padding: 75px 5px 5px 5px;
+  padding: 35px 5px 5px 5px;
 }
 
 .fields input {
@@ -90,6 +90,7 @@ body {
 }
 
 .signin-button {
+  text-decoration: none;
   outline: none;
   border: none;
   cursor: pointer;
@@ -104,6 +105,9 @@ body {
   background-color: #02c8c8;
   box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #b1b1b1, -3px -3px 8px #ffff;
   transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .signin-button:hover {
@@ -111,6 +115,10 @@ body {
 }
 .signin-button:active {
   background-color: #50e5b9;
+}
+.or_desc {
+  text-align: center;
+  padding: 0;
 }
 
 .dark_mode .login-div {
@@ -140,6 +148,9 @@ body {
   color: white;
 }
 .dark_mode .sub-title {
+  color: white;
+}
+.dark_mode .or_desc {
   color: white;
 }
 /* .. ....... ....*/

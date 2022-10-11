@@ -4,17 +4,19 @@ const TodoSchema = new mongoose.Schema(
   {
     title: {
       type: String,
+      required: true,
     },
     isCompleted: {
       type: Boolean,
-      default: false,
+      required: true,
     },
     time: {
       type: String,
+      required: true,
     },
     userId: {
       type: mongoose.Types.ObjectId,
-      ref: "Users",
+      required: true,
     },
   },
   {
@@ -22,4 +24,4 @@ const TodoSchema = new mongoose.Schema(
   }
 );
 
-export const TodoModel = mongoose.model("Todo", TodoSchema);
+export const TodoModel = mongoose.model("Todos", TodoSchema);
